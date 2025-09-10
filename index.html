@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dragon Boat — Accoglienza</title>
+  <style>
+    body{margin:0;font-family:system-ui, sans-serif;background:#fff8f0;color:#222;text-align:center;padding:20px}
+    header{margin-bottom:30px}
+    h1{color:#d35400}
+    .menu{display:flex;flex-direction:column;gap:16px;max-width:300px;margin:0 auto}
+    .btn{background:#e67e22;color:white;border:none;padding:14px;border-radius:10px;font-size:1.1rem;font-weight:600;cursor:pointer;box-shadow:0 6px 14px rgba(0,0,0,0.15);transition:transform 0.2s}
+    .btn:hover{transform:translateY(-2px);}
+    audio{margin-top:12px;width:100%}
+    .section{margin:30px auto;max-width:500px;padding:20px;background:white;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.1);}
+    .hidden{display:none}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Benvenuti — Dragon Boat Experience</h1>
+    <p>Scopri il Dragon Boat, come prepararti, e i dintorni del Naviglio.</p>
+  </header>
+
+  <nav class="menu">
+    <button class="btn" onclick="showSection('dragon')">Il Dragon Boat</button>
+    <button class="btn" onclick="showSection('prepare')">Come prepararsi</button>
+    <button class="btn" onclick="showSection('naviglio')">Naviglio e dintorni</button>
+    <button class="btn" onclick="window.location.href='https://forms.gle/tuo-link-feedback'">Lascia il tuo feedback</button>
+  </nav>
+
+  <div id="dragon" class="section hidden">
+    <h2>Il Dragon Boat</h2>
+    <p>Clicca play per ascoltare la spiegazione:</p>
+    <audio controls src="audio/dragon_boat.mp3"></audio>
+  </div>
+
+  <div id="prepare" class="section hidden">
+    <h2>Come prepararsi</h2>
+    <p>Clicca play per ascoltare la spiegazione:</p>
+    <audio controls src="audio/prepararsi.mp3"></audio>
+  </div>
+
+  <div id="naviglio" class="section hidden">
+    <h2>Naviglio e dintorni</h2>
+    <p>Clicca play per ascoltare la spiegazione:</p>
+    <audio controls src="audio/naviglio.mp3"></audio>
+  </div>
+
+  <script>
+    function showSection(id){
+      document.querySelectorAll('.section').forEach(sec=>sec.classList.add('hidden'));
+      document.getElementById(id).classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
